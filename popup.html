@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chatlas</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <img src="icons/icon32.png" alt="Chatlas icon" class="logo">
+        <span>Chatlas</span>
+      </div>
+      <div class="meta" id="status">No sitemap loaded</div>
+    </header>
+
+    <div id="messages"></div>
+
+    <div class="view" id="setup-view">
+      <!-- Initial setup view -->
+      <div class="card">
+        <h3>Chatlas Setup</h3>
+        <div class="form-group">
+          <label for="hf_token">Hugging Face Token:</label>
+          <input type="password" id="hf_token" placeholder="hf_xxxxxxxxxxxxxxxx">
+        </div>
+        <!-- Replace the existing sitemap_url form group with: -->
+        <div class="form-group">
+            <label for="sitemap_select">Website Sitemap:</label>
+            <select id="sitemap_select">
+                <option value="">Loading sitemaps...</option>
+            </select>
+    
+            <!-- Custom URL input (hidden by default) -->
+            <div id="custom_url_group">
+                <input type="text" id="custom_sitemap_url" placeholder="Enter custom sitemap URL">
+            </div>
+        </div>
+
+
+        <button id="setup-btn">Start Processing</button>
+      </div>
+    </div>
+
+    <div class="view" id="progress-view" style="display:none;">
+      <!-- Progress view -->
+      <div class="card">
+        <h3>Processing Sitemap</h3>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" id="progress-bar"></div>
+          </div>
+          <div class="progress-message" id="progress-message">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view" id="chat-view" style="display:none;">
+      <!-- Chat view -->
+      <div class="card">
+        <h3>Ask a question</h3>
+        <form id="chat-form">
+          <textarea id="question" placeholder="Ask about the site's content..." required></textarea>
+          <div class="actions">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+        <div id="response-container">
+          <div class="info">Ask a question to get started</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button id="config-btn">Configuration</button>
+    </div>
+  </div>
+</body>
+</html>

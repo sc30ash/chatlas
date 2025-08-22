@@ -1,0 +1,10 @@
+beautifulsoup4==4.13.4
+Flask==3.1.1
+Requests==2.32.4
+regex==2023.5.5
+urllib3==2.0.2
+asyncio==3.4.3
+flask_cors==6.0.1
+lxml==4.9.2
+
+
